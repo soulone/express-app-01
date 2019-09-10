@@ -1,10 +1,13 @@
-//LLama
+//[Modulos]
 var express =  require ('express');
-//Inicializa
+var bodyParser =  require ('body-parser');
+//Inicializar
+
+//Inicializa el bodyParser
 var app =  express();
-
-
-
+app.use(bodyParser.urlencoded({
+    extended:true
+}));
 //Definir Static
 app.use(express.static('./public'));
 
@@ -26,6 +29,13 @@ app.get('/Contactos',function(req,res){
     res.sendFile(__dirname+'/views/contactos.html');
 });
 
+
+//[POST]
+app.post('/Respuesta',function(req,res){
+    ape = req.body.apellidos;
+    console.log(ape);
+    res.send('<h1>Gracias '+ape+'</>');
+})
 
 //[Puertos]
 app.listen(3000,function(){
