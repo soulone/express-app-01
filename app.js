@@ -1,6 +1,7 @@
 //[Modulos]
 var express =  require ('express');
 var bodyParser =  require ('body-parser');
+
 //Inicializar
 
 //Inicializa el bodyParser
@@ -25,8 +26,13 @@ app.get('/Nosotros',function(req,res){// Ruta Nosotros (/Nosotros)
 })
 
 app.get('/Contactos',function(req,res){
-    console.log('servidro de prueba corriendo en /Contactos');
+    console.log('Servidor de prueba corriendo en /Contactos');
     res.sendFile(__dirname+'/views/contactos.html');
+});
+
+app.get('/Boostrap',function(req,res){
+    console.log('Servidor de prueba corriendo en /Boostrap');
+    res.sendFile(__dirname+'/views/boostrap.html')
 });
 
 
